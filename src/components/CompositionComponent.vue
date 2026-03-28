@@ -1,12 +1,14 @@
 <!-- Composition Component lebih ke javasript biasa -->
 
 <script setup>
-const name = 'arjuna'
+import { inject } from 'vue'
 
-const showName = () => console.log(name)
+const { nama, updateName } = inject('name')
+
+const showName = () => console.log(nama)
 </script>
 
 <template>
-  <h1>{{ name }}</h1>
-  <button @click="showName">Show Name Composition</button>
+  <h1>{{ nama }}</h1>
+  <button @click="updateName">Show Name Composition</button>
 </template>
